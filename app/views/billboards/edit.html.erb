@@ -1,0 +1,6 @@
+<h1>Edit Billboard</h1>
+<%= render "form", billboard: @billboard%> 
+<br>
+<%# billboard: is just a variable we named %>
+<%= link_to 'Show Billboard', billboard_path(@billboard.id) %> |
+<%= link_to 'Back', billboards_path %>

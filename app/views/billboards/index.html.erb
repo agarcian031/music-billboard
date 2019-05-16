@@ -1,0 +1,12 @@
+<h1>Billboards</h1>
+<hr>
+<h5>Here is a list of trending boards</h5>
+<hr>
+<br>
+<%= link_to 'Create Billboard', new_billboard_path%>
+<ul>
+ <% @billboard.each do |billboard| %>
+ <li><%= link_to billboard.name, billboard_path(billboard.id)%></li>
+   <% end %>
+</ul>
+

@@ -1,0 +1,13 @@
+<h1>Trending Now:</h1>
+<%# <p>Find me in app/views/billboards/show.html.erb</p> %>
+<div class="ui card">
+  <div class="content">
+    <p class="header">
+      <%= @billboard.name %>
+    </p>
+  </div>
+  <div class="extra content">
+    <%= link_to 'Edit', edit_billboard_path(@billboard), class: "ui button blue" %> |
+    <%= link_to 'Back', billboards_path, class: "ui button"%>
+  </div>
+</div>
