@@ -7,6 +7,8 @@ class BillboardsController < ApplicationController
 
   def show
     #set_board
+    @song = @billboard.songs 
+    # access songs that are associated with a billboard id
   end
 
   def new
@@ -37,16 +39,16 @@ class BillboardsController < ApplicationController
 
   def destroy 
     #set_board 
+    @billboard.songs.update_all(billboard_id: nil)
     @billboard.destroy 
-    redirect_to root_path 
+    redirect_to billboards_path 
   end 
-
   private 
   def set_board
     @billboard = Billboard.find(params[:id])
   end 
 
   def board_params
-    params.require(:billboard).permit(:name)
+    params.require(:billboard).permit(:name, :genre)
   end 
 end

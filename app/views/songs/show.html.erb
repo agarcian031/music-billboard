@@ -1,2 +1,20 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<h1>Song: </h1>
+<%# <p>Find me in app/views/billboards/show.html.erb</p> %>
+<div class="ui card">
+  <div class="content">
+    <p class="header">
+      <%= @song.name %>
+    </p>
+  </div>
+  <%# If there are any songs, it will iterate through songs and print each title %>
+  <%# if @song.any?%>
+    <%@artist.songs.each do |song|%>
+    <p>Song: <%= song.name %></p>
+    <%end%>
+  <%#end%>
+  <div class="extra content">
+    <%= link_to 'Edit', edit_artist_song_path(@artist, @song), class: "ui button blue" %> |
+    <%= link_to 'Back', artists_path, class: "ui button"%>
+    <%= link_to 'Delete', artist_song_path(@artist, @song), method: :delete, class: "ui button" %> 
+  </div>
+</div>

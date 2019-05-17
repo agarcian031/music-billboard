@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_action :set_artist 
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   def index
-    @songs = Songs.all
+    @songs = @artist.songs.all
   end
 
   def show
@@ -11,7 +11,7 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new 
+    @song = @artist.song.new 
     # render :new
   end
 
@@ -55,6 +55,6 @@ class SongsController < ApplicationController
   end 
 
   def song_params
-    params.require(:song).permit(:name)
+    params.require(:song).permit(:name,:genre, :billboard_id)
   end 
 end
