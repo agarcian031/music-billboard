@@ -1,11 +1,32 @@
-<h1>Artists</h1>
-<hr>
-<h5>Here is a list of trending artists:</h5>
-<hr>
 <br>
-<%= link_to 'Create Artist', new_artist_path%>
-<ul>
- <% @artists.each do |artist| %>
- <li><%= link_to artist.name, artist_path(artist.id)%></li>
-   <% end %>
-</ul>
+<br>
+<br>
+<br>
+<br>
+<div class="ui one column centered grid">
+  <div class="column">
+  <div class="ui raised very padded text container segment container-seg">
+  <h1 class="ui header centered">Artists</h1>
+  <hr>
+  <h4 class="ui header">Here is a list of trending artists:</h4>
+  <hr>
+  <br>
+  <div class="ui animated large button" tabindex="0">
+    <div><%= link_to 'Create Artist', new_artist_path, class: "visible content link-to"%></div>
+      <div class="hidden content">
+        <i class="right arrow icon"></i>
+      </div>
+  </div>
+    <div class="ui relaxed divided list">
+      <% @artists.each do |artist| %>
+      <div class="item">
+        <i class="large music middle aligned red icon"></i>
+        <div class="content">
+          <a><%= link_to artist.name, artist_path(artist.id), class: "ui header"%></a>
+        </div>
+      </div>
+        <%end%>
+    </div>
+  </div>
+  </div>
+</div>

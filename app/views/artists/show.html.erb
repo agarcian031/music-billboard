@@ -1,4 +1,9 @@
-<h1>Artist: </h1>
+<br>
+<br>
+<br> 
+<div class="ui raised very padded text container segment">
+<h1 class="ui header">Artist: </h1>
+<hr>
 <%# <p>Find me in app/views/billboards/show.html.erb</p> %>
 <div class="ui card">
   <div class="content">
@@ -7,9 +12,12 @@
     </p>
   </div>
   <div class="extra content">
-    <%= link_to 'Edit', edit_artist_path(@artist), class: "ui button blue" %> |
-    <%= link_to 'Show songs', artist_songs_path(@artist), class: "ui button blue" %> |
+   <div class="ui buttons">
+    <%= link_to 'Edit', edit_artist_path(@artist), class: "ui button" %> |
+    <%= link_to 'Songs', artist_songs_path(@artist), class: "ui button" %> |
     <%= link_to 'Back', billboards_path, class: "ui button"%>
-    <%= link_to 'Delete', artist_path(@artist), method: :delete, class: "ui button" %> 
+    </div >
+    <%= link_to 'Delete', artist_path(@artist), method: :delete, class: "ui tiny red button" %> 
   </div>
+</div>
 </div>

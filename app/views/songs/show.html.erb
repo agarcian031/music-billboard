@@ -1,4 +1,11 @@
-<h1>Song: </h1>
+
+
+<br>
+<br>
+<br> 
+<div class="ui raised very padded text container segment">
+<h1 class="ui header">Song: </h1>
+<hr>
 <%# <p>Find me in app/views/billboards/show.html.erb</p> %>
 <div class="ui card">
   <div class="content">
@@ -6,15 +13,12 @@
       <%= @song.name %>
     </p>
   </div>
-  <%# If there are any songs, it will iterate through songs and print each title %>
-  <%# if @song.any?%>
-    <%@artist.songs.each do |song|%>
-    <p>Song: <%= song.name %></p>
-    <%end%>
-  <%#end%>
   <div class="extra content">
-    <%= link_to 'Edit', edit_artist_song_path(@artist, @song), class: "ui button blue" %> |
+   <div class="ui buttons">
+    <%= link_to 'Edit', edit_artist_song_path(@artist, @song), class: "ui button" %> |
     <%= link_to 'Back', artists_path, class: "ui button"%>
-    <%= link_to 'Delete', artist_song_path(@artist, @song), method: :delete, class: "ui button" %> 
+    <%= link_to 'Delete', artist_song_path(@artist, @song), method: :delete, class: "ui red button" %> 
+    </div >
   </div>
+</div>
 </div>

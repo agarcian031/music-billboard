@@ -1,20 +1,31 @@
-<h1>Billboard: </h1>
+
+
+<br>
+<br>
+<br> 
+<div class="ui raised very padded text container segment">
+<h1 class="ui header">Billboard: </h1>
+<hr>
 <%# <p>Find me in app/views/billboards/show.html.erb</p> %>
 <div class="ui card">
   <div class="content">
     <p class="header">
-      <%= @billboard.name %>
+      <%=  @billboard.name %>
     </p>
   </div>
-  <%# If there are any songs, it will iterate through songs and print each title %>
-  <%# if @song.any?%>
-    <%@billboard.songs.each do |song|%>
-    <p>Song: <%= song.name %></p>
-    <%end%>
-  <%#end%>
   <div class="extra content">
-    <%= link_to 'Edit', edit_billboard_path(@billboard), class: "ui button blue" %> |
-    <%= link_to 'Back', billboards_path, class: "ui button"%>
-    <%= link_to 'Delete', billboard_path(@billboard), method: :delete, class: "ui button" %> 
+    <ol class="ui list">
+  <%@billboard.songs.each do |song|%>
+      <li><%= song.name %></li>
+    </ol>
+     <%end%>
   </div>
+  <div class="extra content">
+   <div class="ui buttons">
+    <%= link_to 'Edit', edit_billboard_path(@billboard), class: "ui button" %>
+    <%= link_to 'Back', billboards_path, class: "ui button"%>
+    <%= link_to 'Delete', billboard_path(@billboard), method: :delete, class: "ui red button" %> 
+    </div >
+  </div>
+</div>
 </div>
